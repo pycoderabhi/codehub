@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+ 
+</head>
+<body>
+
+  <button><a href="/ ">home</a></button>
+  <button><a href="admin">manage</a></button>
+    <h1>this is {% block h1 %}
+        home
+        {% endblock h1 %} </h1>
+        {% block body %}
+      <ul>
+        <li><a href="addaccount">addaccount</a></li>
+        <li><a href="seekaccount">seekaccount</a></li>
+        
+        <li><a href="delaccount">delaccount</a></li>
+      </ul>
+    {% endblock body %}
+
+
+</body>
+</html>

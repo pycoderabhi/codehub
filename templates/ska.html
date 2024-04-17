@@ -1,0 +1,33 @@
+{% extends "home.html" %}
+
+{% block h1 %}Seeking accounts{% endblock h1 %}
+{% block body %}
+{% for i in data %}
+<div style="border: 1px black solid; width: 300px; padding:20px; margin:20px ;background-color: gray;">
+    <div class="box">
+        <div style="display: flex; justify-content: center;">
+            <img style="border-radius: 50%; padding: 40px; background: #ec8804e5;" src="" alt="image">
+        </div>
+        <div class="details">
+            <span>{{i.name}}</span><br>     
+            <span>{{i.email}}</span><br>        
+            <span>{{i.dob}}</span><br>      
+            <span>{{i.post}}</span><br>     
+        </div>
+        <form action="/upaccount" method="post">
+            {% csrf_token %}
+            <input type="radio" name="userid" value="{{i.name}}">
+        <button type="submit">Update account</button>
+    </form>
+    <form action="/delaccount" method="get">
+        {% csrf_token %}
+        <input type="radio" name="userid" value="{{i.name}}">
+        <button type="submit">delete</button>
+    </form>
+    </div>
+</div>
+
+
+{% endfor %}
+
+{% endblock body %}

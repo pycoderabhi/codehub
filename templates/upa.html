@@ -1,0 +1,47 @@
+{% extends "home.html" %}
+{% block h1 %}
+  update
+{% endblock h1 %}
+{% block body %}
+<form action="/upaccount" method="get">
+ {% for i in data %}
+  <table border>
+    <tr>
+    <th>feild</th>
+    <th>present</th>
+    <th>to change</th>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>{{i.name}}</td>
+      <td><input type="text" name='name'placeholder="Enter new value" value="{{i.name}}"></td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td>{{i.post}}</td>
+      <td><input type="text" name='post'placeholder="Enter new value" value="{{i.post}}"></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>{{i.email}}</td>
+      <td><input type="email" name='email' placeholder="Enter new value" value="{{i.email}}"></td>
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td>{{i.dob}}</td>
+      <td><input type="date"  name='dob'value="{{i.dob}}"></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>{{i.passwod}}</td>
+      <td><input type="text" name='passwod'placeholder="Enter new value" value="{{i.passwod}}"></td>
+    </tr>
+
+  </table>
+
+
+
+ {% endfor %}
+ <button type="submit">Update</button>
+</form>
+{% endblock body %}
